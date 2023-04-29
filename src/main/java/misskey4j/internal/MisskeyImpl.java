@@ -1,11 +1,14 @@
 package misskey4j.internal;
 
+import java.net.URL;
+
 import misskey4j.Misskey;
 import misskey4j.api.AccountsResource;
 import misskey4j.api.AppResource;
 import misskey4j.api.AuthResource;
 import misskey4j.api.BlocksResource;
 import misskey4j.api.FavoritesResource;
+import misskey4j.api.FederationResource;
 import misskey4j.api.FilesResource;
 import misskey4j.api.FollowingResource;
 import misskey4j.api.HashtagsResource;
@@ -23,6 +26,7 @@ import misskey4j.internal.api.AppResourceImpl;
 import misskey4j.internal.api.AuthResourceImpl;
 import misskey4j.internal.api.BlocksResourceImpl;
 import misskey4j.internal.api.FavoritesResourceImpl;
+import misskey4j.internal.api.FederationResourceImpl;
 import misskey4j.internal.api.FilesResourceImpl;
 import misskey4j.internal.api.FollowingResourceImpl;
 import misskey4j.internal.api.HashtagsResourceImpl;
@@ -37,11 +41,10 @@ import misskey4j.internal.api.ReactionsResourceImpl;
 import misskey4j.internal.api.UsersResourceImpl;
 import misskey4j.stream.MisskeyStream;
 
-import java.net.URL;
-
 public class MisskeyImpl implements Misskey {
 
     private MetaResource meta;
+    private FederationResource federation;
     private AppResource app;
     private AuthResource auth;
     private AccountsResource accounts;
@@ -67,6 +70,7 @@ public class MisskeyImpl implements Misskey {
         this.i = i;
 
         meta = new MetaResourceImpl(url);
+        federation = new FederationResourceImpl(url);
         app = new AppResourceImpl(url);
         auth = new AuthResourceImpl(url);
 
@@ -92,6 +96,9 @@ public class MisskeyImpl implements Misskey {
     public MetaResource meta() {
         return meta;
     }
+
+    @Override
+    public FederationResource federation() { return federation; }
 
     @Override
     public AppResource app() {
