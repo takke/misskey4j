@@ -2,6 +2,8 @@ package misskey4j.entity;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 import java.util.Map;
 
@@ -15,16 +17,25 @@ public class Note {
     private String id;
     private String createdAt;
 
+    @Nullable
     private String text;
+
+    @Nullable
     private String cw;
 
     private String userId;
     private User user;
 
+    @Nullable
     private String replyId;
+
+    @Nullable
     private Note reply;
 
+    @Nullable
     private String renoteId;
+
+    @Nullable
     private Note renote;
 
     private Long renoteCount;
@@ -49,7 +60,10 @@ public class Note {
     private Emojis reactionEmojis;
     private String myReaction;
 
+    @Nullable
     private String url;
+
+    @Nullable
     private String uri;
 
     @SerializedName("_featuredId_")
@@ -75,19 +89,21 @@ public class Note {
         this.createdAt = createdAt;
     }
 
+    @Nullable
     public String getText() {
         return text;
     }
 
-    public void setText(String text) {
+    public void setText(@Nullable String text) {
         this.text = text;
     }
 
+    @Nullable
     public String getCw() {
         return cw;
     }
 
-    public void setCw(String cw) {
+    public void setCw(@Nullable String cw) {
         this.cw = cw;
     }
 
@@ -107,35 +123,39 @@ public class Note {
         this.user = user;
     }
 
+    @Nullable
     public String getReplyId() {
         return replyId;
     }
 
-    public void setReplyId(String replyId) {
+    public void setReplyId(@Nullable String replyId) {
         this.replyId = replyId;
     }
 
+    @Nullable
     public Note getReply() {
         return reply;
     }
 
-    public void setReply(Note reply) {
+    public void setReply(@Nullable Note reply) {
         this.reply = reply;
     }
 
+    @Nullable
     public String getRenoteId() {
         return renoteId;
     }
 
-    public void setRenoteId(String renoteId) {
+    public void setRenoteId(@Nullable String renoteId) {
         this.renoteId = renoteId;
     }
 
+    @Nullable
     public Note getRenote() {
         return renote;
     }
 
-    public void setRenote(Note renote) {
+    public void setRenote(@Nullable Note renote) {
         this.renote = renote;
     }
 
@@ -263,19 +283,21 @@ public class Note {
         this.myReaction = myReaction;
     }
 
+    @Nullable
     public String getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(@Nullable String url) {
         this.url = url;
     }
 
+    @Nullable
     public String getUri() {
         return uri;
     }
 
-    public void setUri(String uri) {
+    public void setUri(@Nullable String uri) {
         this.uri = uri;
     }
 

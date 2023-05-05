@@ -1,8 +1,10 @@
 package misskey4j.entity;
 
-import misskey4j.util.BlurHashDecoder;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+
+import misskey4j.util.BlurHashDecoder;
 
 /**
  * ユーザーオブジェクト
@@ -12,6 +14,7 @@ public class User {
     private String id;
     private String username;
 
+    @Nullable
     private String name;
     private String url;
     private String avatarUrl;
@@ -20,6 +23,7 @@ public class User {
     private String bannerUrl;
     private Color bannerColor;
 
+    @Nullable
     private String host;
     private String description;
 
@@ -66,11 +70,12 @@ public class User {
         this.username = username;
     }
 
+    @Nullable
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(@Nullable String name) {
         this.name = name;
     }
 
@@ -124,11 +129,12 @@ public class User {
         this.bannerColor = bannerColor;
     }
 
+    @Nullable
     public String getHost() {
         return host;
     }
 
-    public void setHost(String host) {
+    public void setHost(@Nullable String host) {
         this.host = host;
     }
 
