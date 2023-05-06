@@ -49,6 +49,7 @@ public class Note {
 
     private Boolean localOnly;
 
+    @Nullable
     private List<String> mentions;
     private List<String> tags;
 
@@ -201,6 +202,7 @@ public class Note {
         this.localOnly = localOnly;
     }
 
+    @Nullable
     public List<String> getMentions() {
         return mentions;
     }
