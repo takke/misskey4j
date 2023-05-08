@@ -57,6 +57,8 @@ public class Note {
     private List<File> files;
 
     private Poll poll;
+
+    @Nullable
     private Emojis emojis;
 
     private Map<String, Long> reactions;
@@ -259,6 +261,7 @@ public class Note {
         this.poll = poll;
     }
 
+    @Nullable
     public List<Emoji> getEmojis() {
         if (emojis == null) return null;
         return emojis.getList();
