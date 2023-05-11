@@ -51,6 +51,8 @@ public class Note {
 
     @Nullable
     private List<String> mentions;
+
+    @Nullable
     private List<String> tags;
 
     private List<String> fileIds;
@@ -213,6 +215,7 @@ public class Note {
         this.mentions = mentions;
     }
 
+    @Nullable
     public List<String> getTags() {
         return tags;
     }
