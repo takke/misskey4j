@@ -29,6 +29,8 @@ public class User {
 
     @Nullable
     private String host;
+
+    @Nullable
     private String description;
 
     private String birthday;
@@ -144,6 +146,7 @@ public class User {
         this.host = host;
     }
 
+    @Nullable
     public String getDescription() {
         return description;
     }
