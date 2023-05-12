@@ -16,6 +16,8 @@ public class User {
 
     @Nullable
     private String name;
+
+    @Nullable
     private String url;
     private String avatarUrl;
     private String avatarBlurhash;
@@ -79,6 +81,7 @@ public class User {
         this.name = name;
     }
 
+    @Nullable
     public String getUrl() {
         return url;
     }
