@@ -57,6 +57,8 @@ public class User {
     private Instance instance;
 
     private Emojis emojis;
+
+    @Nullable
     private List<Field> fields;
 
     // region
@@ -90,7 +92,7 @@ public class User {
         return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(@Nullable String url) {
         this.url = url;
     }
 
@@ -125,7 +127,7 @@ public class User {
         return bannerUrl;
     }
 
-    public void setBannerUrl(String bannerUrl) {
+    public void setBannerUrl(@Nullable String bannerUrl) {
         this.bannerUrl = bannerUrl;
     }
 
@@ -151,7 +153,7 @@ public class User {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(@Nullable String description) {
         this.description = description;
     }
 
@@ -293,11 +295,12 @@ public class User {
         this.emojis.setList(emojis);
     }
 
+    @Nullable
     public List<Field> getFields() {
         return fields;
     }
 
-    public void setFields(List<Field> fields) {
+    public void setFields(@Nullable List<Field> fields) {
         this.fields = fields;
     }
 
