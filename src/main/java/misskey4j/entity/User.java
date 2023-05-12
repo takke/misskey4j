@@ -22,6 +22,8 @@ public class User {
     private String avatarUrl;
     private String avatarBlurhash;
     private Color avatarColor;
+
+    @Nullable
     private String bannerUrl;
     private Color bannerColor;
 
@@ -116,6 +118,7 @@ public class User {
         this.avatarColor = avatarColor;
     }
 
+    @Nullable
     public String getBannerUrl() {
         return bannerUrl;
     }
