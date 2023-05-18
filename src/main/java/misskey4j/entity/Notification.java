@@ -40,6 +40,9 @@ public class Notification {
     @Nullable
     private String icon;
 
+    @Nullable
+    private String achievement;
+
 
     // region
     @NotNull
@@ -139,6 +142,15 @@ public class Notification {
 
     public void setIcon(@Nullable String icon) {
         this.icon = icon;
+    }
+
+    @Nullable
+    public String getAchievement() {
+        return achievement;
+    }
+
+    public void setAchievement(@Nullable String achievement) {
+        this.achievement = achievement;
     }
     // endregion
 }
