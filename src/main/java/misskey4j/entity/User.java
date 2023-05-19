@@ -54,6 +54,8 @@ public class User {
     private Boolean hasUnreadSpecifiedNotes;
     private Boolean hasUnreadMentions;
     private String onlineStatus;
+
+    @Nullable
     private Instance instance;
 
     private Emojis emojis;
@@ -320,11 +322,12 @@ public class User {
         this.onlineStatus = onlineStatus;
     }
 
+    @Nullable
     public Instance getInstance() {
         return instance;
     }
 
-    public void setInstance(Instance instance) {
+    public void setInstance(@Nullable Instance instance) {
         this.instance = instance;
     }
 
