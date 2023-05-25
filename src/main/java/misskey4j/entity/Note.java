@@ -64,7 +64,10 @@ public class Note {
     private Emojis emojis;
 
     private Map<String, Long> reactions;
+
+    @Nullable
     private Emojis reactionEmojis;
+
     private String myReaction;
 
     @Nullable
@@ -283,12 +286,13 @@ public class Note {
         this.reactions = reactions;
     }
 
+    @Nullable
     public List<Emoji> getReactionEmojis() {
         if (reactionEmojis == null) return null;
         return reactionEmojis.getList();
     }
 
-    public void setReactionEmojis(List<Emoji> reactionEmojis) {
+    public void setReactionEmojis(@Nullable List<Emoji> reactionEmojis) {
         this.reactionEmojis = new Emojis();
         this.reactionEmojis.setList(reactionEmojis);
     }
