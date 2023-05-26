@@ -1,6 +1,8 @@
 package misskey4j.api.request.users;
 
-public class UsersRecommendationRequest {
+import misskey4j.api.model.TokenRequest;
+
+public class UsersRecommendationRequest extends TokenRequest {
 
     public static UsersRecommendationRequestBuilder builder() {
         return new UsersRecommendationRequestBuilder();
