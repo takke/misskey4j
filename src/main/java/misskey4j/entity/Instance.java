@@ -11,6 +11,8 @@ public class Instance {
     private String softwareVersion;
     private String iconUrl;
     private String faviconUrl;
+
+    @Nullable
     private Color themeColor;
 
     @Nullable
@@ -54,11 +56,12 @@ public class Instance {
         this.faviconUrl = faviconUrl;
     }
 
+    @Nullable
     public Color getThemeColor() {
         return themeColor;
     }
 
-    public void setThemeColor(Color themeColor) {
+    public void setThemeColor(@Nullable Color themeColor) {
         this.themeColor = themeColor;
     }
 }
