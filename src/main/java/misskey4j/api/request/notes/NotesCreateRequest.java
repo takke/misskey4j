@@ -171,6 +171,11 @@ public class NotesCreateRequest extends TokenRequest {
             return this;
         }
 
+        public NotesCreateRequestBuilder channelId(String channelId) {
+            this.channelId = channelId;
+            return this;
+        }
+
         public NotesCreateRequestBuilder poll(PollRequest poll) {
             this.poll = poll;
             return this;
