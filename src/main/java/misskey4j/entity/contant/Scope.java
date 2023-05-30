@@ -1,8 +1,5 @@
 package misskey4j.entity.contant;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * 認可スコープを表現するクラス
  */
@@ -40,6 +37,10 @@ public class Scope {
             Scope.write().pageLikes(),
             Scope.read().userGroups(),
             Scope.write().userGroups(),
+
+            // Channels
+            Scope.read().channels(),
+            Scope.write().channels(),
 
             // Write Only
             Scope.write().notes(),
@@ -145,6 +146,10 @@ public class Scope {
 
         public Scope userGroups() {
             return new Scope(operation, "user-groups");
+        }
+
+        public Scope channels() {
+            return new Scope(operation, "channels");
         }
     }
 }
