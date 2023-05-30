@@ -1,9 +1,11 @@
 package misskey4j.api.request.notes;
 
-import misskey4j.api.model.TokenRequest;
-import misskey4j.api.model.PollRequest;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+
+import misskey4j.api.model.PollRequest;
+import misskey4j.api.model.TokenRequest;
 
 public class NotesCreateRequest extends TokenRequest {
 
@@ -26,6 +28,9 @@ public class NotesCreateRequest extends TokenRequest {
     private List<String> fileIds;
     private String replyId;
     private String renoteId;
+
+    @Nullable
+    private String channelId;
 
     private PollRequest poll;
 
@@ -78,6 +83,11 @@ public class NotesCreateRequest extends TokenRequest {
         return renoteId;
     }
 
+    @Nullable
+    public String getChannelId() {
+        return channelId;
+    }
+
     public PollRequest getPoll() {
         return poll;
     }
@@ -95,6 +105,7 @@ public class NotesCreateRequest extends TokenRequest {
         private List<String> fileIds;
         private String replyId;
         private String renoteId;
+        @Nullable private String channelId;
         private PollRequest poll;
 
         private NotesCreateRequestBuilder() {
@@ -173,6 +184,7 @@ public class NotesCreateRequest extends TokenRequest {
             notesCreateRequest.fileIds = this.fileIds;
             notesCreateRequest.cw = this.cw;
             notesCreateRequest.renoteId = this.renoteId;
+            notesCreateRequest.channelId = this.channelId;
             notesCreateRequest.noExtractHashtags = this.noExtractHashtags;
             notesCreateRequest.replyId = this.replyId;
             notesCreateRequest.visibleUserIds = this.visibleUserIds;
