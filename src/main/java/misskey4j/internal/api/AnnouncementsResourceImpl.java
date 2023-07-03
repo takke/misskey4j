@@ -3,6 +3,7 @@ package misskey4j.internal.api;
 import misskey4j.MisskeyAPI;
 import misskey4j.api.AnnouncementsResource;
 import misskey4j.api.request.AnnouncementsRequest;
+import misskey4j.api.request.ReadAnnouncementRequest;
 import misskey4j.api.response.AnnouncementsResponse;
 import misskey4j.entity.share.Response;
 
@@ -18,5 +19,14 @@ public class AnnouncementsResourceImpl extends AbstractResourceImpl implements A
     @Override
     public Response<AnnouncementsResponse[]> announcements(AnnouncementsRequest request) {
         return post(AnnouncementsResponse[].class, MisskeyAPI.Announcements.code(), request);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Response<Void> readAnnouncement(String announcementId) {
+
+        return post(MisskeyAPI.ReadAnnouncement.code(), new ReadAnnouncementRequest(announcementId));
     }
 }

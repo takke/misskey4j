@@ -15,4 +15,12 @@ public interface AnnouncementsResource {
      * https://misskey.io/api-doc#tag/meta/operation/announcements
      */
     Response<AnnouncementsResponse[]> announcements(AnnouncementsRequest request);
+
+    /**
+     * お知らせを既読にします。
+     *
+     * https://misskey.io/api-doc#tag/account/operation/i/read-announcement
+     */
+    Response<Void> readAnnouncement(String announcementId);
+
 }

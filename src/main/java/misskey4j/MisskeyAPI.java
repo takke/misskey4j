@@ -13,6 +13,7 @@ public enum MisskeyAPI {
     // Announcements
     // ------------------------------------------ //
     Announcements("announcements"),
+    ReadAnnouncement("i/read-announcement"),
 
     // ------------------------------------------ //
     // Federation
