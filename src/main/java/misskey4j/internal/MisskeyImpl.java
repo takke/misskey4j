@@ -4,6 +4,7 @@ import java.net.URL;
 
 import misskey4j.Misskey;
 import misskey4j.api.AccountsResource;
+import misskey4j.api.AnnouncementsResource;
 import misskey4j.api.ApResource;
 import misskey4j.api.AppResource;
 import misskey4j.api.AuthResource;
@@ -26,6 +27,7 @@ import misskey4j.api.ReactionsResource;
 import misskey4j.api.UsersResource;
 import misskey4j.api.WebhooksResource;
 import misskey4j.internal.api.AccountsResourceImpl;
+import misskey4j.internal.api.AnnouncementsResourceImpl;
 import misskey4j.internal.api.ApResourceImpl;
 import misskey4j.internal.api.AppResourceImpl;
 import misskey4j.internal.api.AuthResourceImpl;
@@ -53,6 +55,7 @@ public class MisskeyImpl implements Misskey {
 
     private final MetaResource meta;
     private final FederationResource federation;
+    private final AnnouncementsResource announcements;
     private final ApResource ap;
     private final AppResource app;
     private final AuthResource auth;
@@ -87,6 +90,7 @@ public class MisskeyImpl implements Misskey {
         auth = new AuthResourceImpl(url);
 
         // Needs AccessToken
+        announcements = new AnnouncementsResourceImpl(url, i);
         ap = new ApResourceImpl(url, i);
         accounts = new AccountsResourceImpl(url, i);
         users = new UsersResourceImpl(url, i);
@@ -106,6 +110,11 @@ public class MisskeyImpl implements Misskey {
         webhooks = new WebhooksResourceImpl(url, i);
         galleries = new GalleriesResourceImpl(url, i);
         other = new OtherResourceImpl(url, i);
+    }
+
+    @Override
+    public AnnouncementsResource announcements() {
+        return announcements;
     }
 
     @Override

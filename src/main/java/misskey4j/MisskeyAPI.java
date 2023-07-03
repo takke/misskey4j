@@ -10,6 +10,11 @@ public enum MisskeyAPI {
     Emojis("emojis"),
 
     // ------------------------------------------ //
+    // Announcements
+    // ------------------------------------------ //
+    Announcements("announcements"),
+
+    // ------------------------------------------ //
     // Federation
     // ------------------------------------------ //
     FederationShowInstance("federation/show-instance"),
