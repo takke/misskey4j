@@ -8,6 +8,7 @@ public enum MisskeyAPI {
 
     Meta("meta"),
     Emojis("emojis"),
+    GetOnlineUsersCount("get-online-users-count"),
 
     // ------------------------------------------ //
     // Announcements

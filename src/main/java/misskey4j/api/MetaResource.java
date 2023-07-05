@@ -3,6 +3,7 @@ package misskey4j.api;
 import misskey4j.api.request.meta.EmojisRequest;
 import misskey4j.api.request.meta.MetaRequest;
 import misskey4j.api.response.meta.EmojisResponse;
+import misskey4j.api.response.meta.GetOnlineUsersCountResponse;
 import misskey4j.api.response.meta.MetaResponse;
 import misskey4j.entity.share.Response;
 
@@ -21,4 +22,10 @@ public interface MetaResource {
      */
     Response<EmojisResponse> emojis(
             EmojisRequest request);
+
+    /**
+     * オンラインになっているユーザ数を取得します。
+     * https://misskey-hub.net/docs/api/endpoints/get-online-users-count.html
+     */
+    Response<GetOnlineUsersCountResponse> getOnlineUsersCount();
 }
