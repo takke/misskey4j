@@ -67,6 +67,9 @@ public class User {
     @Nullable
     private List<BadgeRole> badgeRoles;
 
+    @Nullable
+    private List<Role> roles;
+
     // region
     public String getId() {
         return id;
@@ -343,6 +346,15 @@ public class User {
 
     public void setBadgeRoles(@Nullable List<BadgeRole> badgeRoles) {
         this.badgeRoles = badgeRoles;
+    }
+
+    @Nullable
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(@Nullable List<Role> roles) {
+        this.roles = roles;
     }
 
     // endregion
