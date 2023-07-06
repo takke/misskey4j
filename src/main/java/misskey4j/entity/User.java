@@ -1,9 +1,10 @@
 package misskey4j.entity;
 
-import misskey4j.util.BlurHashDecoder;
+import java.util.List;
 
 import javax.annotation.Nullable;
-import java.util.List;
+
+import misskey4j.util.BlurHashDecoder;
 
 /**
  * ユーザーオブジェクト
@@ -62,6 +63,9 @@ public class User {
 
     @Nullable
     private List<Field> fields;
+
+    @Nullable
+    private List<BadgeRole> badgeRoles;
 
     // region
     public String getId() {
@@ -330,6 +334,15 @@ public class User {
 
     public void setInstance(@Nullable Instance instance) {
         this.instance = instance;
+    }
+
+    @Nullable
+    public List<BadgeRole> getBadgeRoles() {
+        return badgeRoles;
+    }
+
+    public void setBadgeRoles(@Nullable List<BadgeRole> badgeRoles) {
+        this.badgeRoles = badgeRoles;
     }
 
     // endregion
