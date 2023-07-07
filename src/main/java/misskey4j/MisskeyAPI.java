@@ -69,6 +69,7 @@ public enum MisskeyAPI {
     IFavorites("i/favorites"),
     INotifications("i/notifications"),
     IWebhooksUpdate("i/webhooks/update"),
+    IUpdate("i/update"),
 
     // ------------------------------------------ //
     // Auth
