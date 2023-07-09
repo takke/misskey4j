@@ -5,6 +5,7 @@ import java.net.URL;
 import misskey4j.Misskey;
 import misskey4j.api.AccountsResource;
 import misskey4j.api.AnnouncementsResource;
+import misskey4j.api.AntennasResource;
 import misskey4j.api.ApResource;
 import misskey4j.api.AppResource;
 import misskey4j.api.AuthResource;
@@ -28,6 +29,7 @@ import misskey4j.api.UsersResource;
 import misskey4j.api.WebhooksResource;
 import misskey4j.internal.api.AccountsResourceImpl;
 import misskey4j.internal.api.AnnouncementsResourceImpl;
+import misskey4j.internal.api.AntennasResourceImpl;
 import misskey4j.internal.api.ApResourceImpl;
 import misskey4j.internal.api.AppResourceImpl;
 import misskey4j.internal.api.AuthResourceImpl;
@@ -63,6 +65,7 @@ public class MisskeyImpl implements Misskey {
     private final UsersResource users;
     private final ListsResource lists;
     private final ChannelsResource channels;
+    private final AntennasResource antennas;
     private final NotesResource notes;
     private final MutesResource mutes;
     private final BlocksResource blocks;
@@ -96,6 +99,7 @@ public class MisskeyImpl implements Misskey {
         users = new UsersResourceImpl(url, i);
         lists = new ListsResourceImpl(url, i);
         channels = new ChannelsResourceImpl(url, i);
+        antennas = new AntennasResourceImpl(url, i);
         notes = new NotesResourceImpl(url, i);
 
         reactions = new ReactionsResourceImpl(url, i);
@@ -160,6 +164,11 @@ public class MisskeyImpl implements Misskey {
     @Override
     public ChannelsResource channels() {
         return channels;
+    }
+
+    @Override
+    public AntennasResource antennas() {
+        return antennas;
     }
 
     @Override

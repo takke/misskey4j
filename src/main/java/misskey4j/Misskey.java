@@ -2,6 +2,7 @@ package misskey4j;
 
 import misskey4j.api.AccountsResource;
 import misskey4j.api.AnnouncementsResource;
+import misskey4j.api.AntennasResource;
 import misskey4j.api.ApResource;
 import misskey4j.api.AppResource;
 import misskey4j.api.AuthResource;
@@ -46,6 +47,8 @@ public interface Misskey {
     ListsResource lists();
 
     ChannelsResource channels();
+
+    AntennasResource antennas();
 
     NotesResource notes();
 

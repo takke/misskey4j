@@ -122,6 +122,17 @@ public enum MisskeyAPI {
 
 
     // ------------------------------------------ //
+    // Antennas
+    // ------------------------------------------ //
+
+//    AntennasCreate("antennas/create"),
+//    AntennasDelete("antennas/delete"),
+    AntennasList("antennas/list"),
+    AntennasNotes("antennas/notes"),
+//    AntennasShow("antennas/show"),
+//    AntennasUpdate("antennas/update"),
+
+    // ------------------------------------------ //
     // Following
     // ------------------------------------------ //
 
