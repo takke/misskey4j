@@ -70,6 +70,9 @@ public class User {
     @Nullable
     private List<Role> roles;
 
+    @Nullable
+    private UserPolicies policies;
+
     // region
     public String getId() {
         return id;
@@ -357,5 +360,13 @@ public class User {
         this.roles = roles;
     }
 
+    @Nullable
+    public UserPolicies getPolicies() {
+        return policies;
+    }
+
+    public void setPolicies(@Nullable UserPolicies policies) {
+        this.policies = policies;
+    }
     // endregion
 }
