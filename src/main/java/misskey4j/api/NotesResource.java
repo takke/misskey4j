@@ -14,6 +14,7 @@ import misskey4j.api.request.notes.NotesReactionsRequest;
 import misskey4j.api.request.notes.NotesRenotesRequest;
 import misskey4j.api.request.notes.NotesRepliesRequest;
 import misskey4j.api.request.notes.NotesRequest;
+import misskey4j.api.request.notes.NotesSearchByTagRequest;
 import misskey4j.api.request.notes.NotesSearchRequest;
 import misskey4j.api.request.notes.NotesShowRequest;
 import misskey4j.api.request.notes.NotesTimelineRequest;
@@ -31,6 +32,7 @@ import misskey4j.api.response.notes.NotesReactionsResponse;
 import misskey4j.api.response.notes.NotesRenotesResponse;
 import misskey4j.api.response.notes.NotesRepliesResponse;
 import misskey4j.api.response.notes.NotesResponse;
+import misskey4j.api.response.notes.NotesSearchByTagResponse;
 import misskey4j.api.response.notes.NotesSearchResponse;
 import misskey4j.api.response.notes.NotesShowResponse;
 import misskey4j.api.response.notes.NotesTimelineResponse;
@@ -151,6 +153,13 @@ public interface NotesResource {
      */
     Response<NotesSearchResponse[]> search(
             NotesSearchRequest request);
+
+    /**
+     * 指定されたハッシュタグが付けられたノートを取得します。
+     * https://misskey.io/api-doc#tag/notes/operation/notes/search-by-tag
+     */
+    Response<NotesSearchByTagResponse[]> searchByTag(
+            NotesSearchByTagRequest request);
 
     /**
      * 指定したユーザーリストのタイムラインを取得します。

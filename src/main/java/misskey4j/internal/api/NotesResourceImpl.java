@@ -16,6 +16,7 @@ import misskey4j.api.request.notes.NotesReactionsRequest;
 import misskey4j.api.request.notes.NotesRenotesRequest;
 import misskey4j.api.request.notes.NotesRepliesRequest;
 import misskey4j.api.request.notes.NotesRequest;
+import misskey4j.api.request.notes.NotesSearchByTagRequest;
 import misskey4j.api.request.notes.NotesSearchRequest;
 import misskey4j.api.request.notes.NotesShowRequest;
 import misskey4j.api.request.notes.NotesTimelineRequest;
@@ -33,6 +34,7 @@ import misskey4j.api.response.notes.NotesReactionsResponse;
 import misskey4j.api.response.notes.NotesRenotesResponse;
 import misskey4j.api.response.notes.NotesRepliesResponse;
 import misskey4j.api.response.notes.NotesResponse;
+import misskey4j.api.response.notes.NotesSearchByTagResponse;
 import misskey4j.api.response.notes.NotesSearchResponse;
 import misskey4j.api.response.notes.NotesShowResponse;
 import misskey4j.api.response.notes.NotesTimelineResponse;
@@ -203,6 +205,16 @@ public class NotesResourceImpl extends AbstractResourceImpl implements NotesReso
             NotesSearchRequest request) {
         return post(NotesSearchResponse[].class,
                 MisskeyAPI.NotesSearch.code(), request);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Response<NotesSearchByTagResponse[]> searchByTag(
+            NotesSearchByTagRequest request) {
+        return post(NotesSearchByTagResponse[].class,
+                MisskeyAPI.NotesSearchByTag.code(), request);
     }
 
     /**
