@@ -38,8 +38,13 @@ public class User {
     private String updatedAt;
     private String location;
 
+    @Nullable
     private Long followersCount;
+
+    @Nullable
     private Long followingCount;
+
+    @Nullable
     private Long notesCount;
 
     private List<String> pinnedNoteIds;
@@ -201,27 +206,30 @@ public class User {
         this.location = location;
     }
 
+    @Nullable
     public Long getFollowersCount() {
         return followersCount;
     }
 
-    public void setFollowersCount(Long followersCount) {
+    public void setFollowersCount(@Nullable Long followersCount) {
         this.followersCount = followersCount;
     }
 
+    @Nullable
     public Long getFollowingCount() {
         return followingCount;
     }
 
-    public void setFollowingCount(Long followingCount) {
+    public void setFollowingCount(@Nullable Long followingCount) {
         this.followingCount = followingCount;
     }
 
+    @Nullable
     public Long getNotesCount() {
         return notesCount;
     }
 
-    public void setNotesCount(Long notesCount) {
+    public void setNotesCount(@Nullable Long notesCount) {
         this.notesCount = notesCount;
     }
 
