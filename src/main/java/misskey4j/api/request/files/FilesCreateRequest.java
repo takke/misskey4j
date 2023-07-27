@@ -1,9 +1,9 @@
 package misskey4j.api.request.files;
 
-import misskey4j.api.model.TokenRequest;
-
 import java.io.File;
 import java.io.InputStream;
+
+import misskey4j.api.model.TokenRequest;
 
 public class FilesCreateRequest extends TokenRequest {
 
@@ -13,6 +13,7 @@ public class FilesCreateRequest extends TokenRequest {
 
     private String folderId;
     private String name;
+    private String comment;
     private Boolean isSensitive;
     private Boolean force;
 
@@ -28,6 +29,10 @@ public class FilesCreateRequest extends TokenRequest {
 
     public String getName() {
         return name;
+    }
+
+    public String getComment() {
+        return comment;
     }
 
     public Boolean getSensitive() {
@@ -49,6 +54,7 @@ public class FilesCreateRequest extends TokenRequest {
     public static final class FilesCreateRequestBuilder {
         private String folderId;
         private String name;
+        private String comment;
         private Boolean isSensitive;
         private Boolean force;
 
@@ -67,6 +73,11 @@ public class FilesCreateRequest extends TokenRequest {
 
         public FilesCreateRequestBuilder name(String name) {
             this.name = name;
+            return this;
+        }
+
+        public FilesCreateRequestBuilder comment(String comment) {
+            this.comment = comment;
             return this;
         }
 
@@ -93,6 +104,7 @@ public class FilesCreateRequest extends TokenRequest {
         public FilesCreateRequest build() {
             FilesCreateRequest filesCreateRequest = new FilesCreateRequest();
             filesCreateRequest.name = this.name;
+            filesCreateRequest.comment = this.comment;
             filesCreateRequest.force = this.force;
             filesCreateRequest.stream = this.stream;
             filesCreateRequest.folderId = this.folderId;
