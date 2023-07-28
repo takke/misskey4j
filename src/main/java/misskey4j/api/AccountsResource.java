@@ -2,11 +2,15 @@ package misskey4j.api;
 
 import misskey4j.api.request.i.IFavoritesRequest;
 import misskey4j.api.request.i.INotificationsRequest;
+import misskey4j.api.request.i.IPinRequest;
 import misskey4j.api.request.i.IRequest;
+import misskey4j.api.request.i.IUnpinRequest;
 import misskey4j.api.request.i.IUpdateRequest;
 import misskey4j.api.response.i.IFavoritesResponse;
 import misskey4j.api.response.i.INotificationsResponse;
+import misskey4j.api.response.i.IPinResponse;
 import misskey4j.api.response.i.IResponse;
+import misskey4j.api.response.i.IUnpinResponse;
 import misskey4j.api.response.i.IUpdateResponse;
 import misskey4j.entity.share.Response;
 
@@ -42,4 +46,18 @@ public interface AccountsResource {
      * https://misskey.io/api-doc#tag/account/operation/i/update
      */
     Response<IUpdateResponse> iUpdate(IUpdateRequest request);
+
+    /**
+     * 指定したノートをピン留めに登録します。
+     *
+     * https://misskey.io/api-doc#tag/account/operation/i/pin
+     */
+    Response<IPinResponse> pinNote(IPinRequest request);
+
+    /**
+     * 指定したノートをピン留めから削除します。
+     *
+     * https://misskey.io/api-doc#tag/account/operation/i/unpin
+     */
+    Response<IUnpinResponse> unpinNote(IUnpinRequest request);
 }
