@@ -8,6 +8,7 @@ import misskey4j.api.AppResource;
 import misskey4j.api.AuthResource;
 import misskey4j.api.BlocksResource;
 import misskey4j.api.ChannelsResource;
+import misskey4j.api.ClipsResource;
 import misskey4j.api.FavoritesResource;
 import misskey4j.api.FederationResource;
 import misskey4j.api.FilesResource;
@@ -49,6 +50,8 @@ public interface Misskey {
     ChannelsResource channels();
 
     AntennasResource antennas();
+
+    ClipsResource clips();
 
     NotesResource notes();
 

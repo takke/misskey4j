@@ -11,6 +11,7 @@ import misskey4j.api.AppResource;
 import misskey4j.api.AuthResource;
 import misskey4j.api.BlocksResource;
 import misskey4j.api.ChannelsResource;
+import misskey4j.api.ClipsResource;
 import misskey4j.api.FavoritesResource;
 import misskey4j.api.FederationResource;
 import misskey4j.api.FilesResource;
@@ -35,6 +36,7 @@ import misskey4j.internal.api.AppResourceImpl;
 import misskey4j.internal.api.AuthResourceImpl;
 import misskey4j.internal.api.BlocksResourceImpl;
 import misskey4j.internal.api.ChannelsResourceImpl;
+import misskey4j.internal.api.ClipsResourceImpl;
 import misskey4j.internal.api.FavoritesResourceImpl;
 import misskey4j.internal.api.FederationResourceImpl;
 import misskey4j.internal.api.FilesResourceImpl;
@@ -66,6 +68,7 @@ public class MisskeyImpl implements Misskey {
     private final ListsResource lists;
     private final ChannelsResource channels;
     private final AntennasResource antennas;
+    private final ClipsResource clips;
     private final NotesResource notes;
     private final MutesResource mutes;
     private final BlocksResource blocks;
@@ -100,6 +103,7 @@ public class MisskeyImpl implements Misskey {
         lists = new ListsResourceImpl(url, i);
         channels = new ChannelsResourceImpl(url, i);
         antennas = new AntennasResourceImpl(url, i);
+        clips = new ClipsResourceImpl(url, i);
         notes = new NotesResourceImpl(url, i);
 
         reactions = new ReactionsResourceImpl(url, i);
@@ -169,6 +173,11 @@ public class MisskeyImpl implements Misskey {
     @Override
     public AntennasResource antennas() {
         return antennas;
+    }
+
+    @Override
+    public ClipsResource clips() {
+        return clips;
     }
 
     @Override
