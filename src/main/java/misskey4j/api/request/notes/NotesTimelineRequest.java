@@ -20,6 +20,7 @@ public class NotesTimelineRequest extends TokenRequest {
     private Boolean includeRenotedMyNotes;
     private Boolean includeLocalRenotes;
     private Boolean withFiles;
+    private Boolean withReplies;
 
     // region
     public Long getLimit() {
@@ -58,6 +59,10 @@ public class NotesTimelineRequest extends TokenRequest {
         return withFiles;
     }
 
+    public Boolean getWithReplies() {
+        return withReplies;
+    }
+
     public static final class NotesTimelineRequestBuilder
             implements FullPagingBuilder<NotesTimelineRequestBuilder> {
 
@@ -70,6 +75,7 @@ public class NotesTimelineRequest extends TokenRequest {
         private Boolean includeRenotedMyNotes;
         private Boolean includeLocalRenotes;
         private Boolean withFiles;
+        private Boolean withReplies;
 
         private NotesTimelineRequestBuilder() {
         }
@@ -120,6 +126,11 @@ public class NotesTimelineRequest extends TokenRequest {
             return this;
         }
 
+        public NotesTimelineRequestBuilder withReplies(Boolean withReplies) {
+            this.withReplies = withReplies;
+            return this;
+        }
+
         public NotesTimelineRequest build() {
             NotesTimelineRequest notesTimelineRequest = new NotesTimelineRequest();
             notesTimelineRequest.includeLocalRenotes = this.includeLocalRenotes;
@@ -131,6 +142,7 @@ public class NotesTimelineRequest extends TokenRequest {
             notesTimelineRequest.includeMyRenotes = this.includeMyRenotes;
             notesTimelineRequest.sinceDate = this.sinceDate;
             notesTimelineRequest.withFiles = this.withFiles;
+            notesTimelineRequest.withReplies = this.withReplies;
             return notesTimelineRequest;
         }
     }
