@@ -21,6 +21,10 @@ public class User {
     private String url;
     private String avatarUrl;
     private String avatarBlurhash;
+
+    @Nullable
+    private List<AvatarDecoration> avatarDecorations;
+
     private Color avatarColor;
 
     @Nullable
@@ -331,6 +335,15 @@ public class User {
 
     public void setAvatarBlurhash(String avatarBlurhash) {
         this.avatarBlurhash = avatarBlurhash;
+    }
+
+    @Nullable
+    public List<AvatarDecoration> getAvatarDecorations() {
+        return avatarDecorations;
+    }
+
+    public void setAvatarDecorations(@Nullable List<AvatarDecoration> avatarDecorations) {
+        this.avatarDecorations = avatarDecorations;
     }
 
     public String getOnlineStatus() {
