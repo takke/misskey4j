@@ -44,6 +44,9 @@ public class Meta {
     private Boolean enableServiceWorker;
     private Boolean translatorAvailable;
     private String proxyAccountName;
+
+    private Policies policies;
+
     private String mediaProxy;
     private MetaFeatures features;
 
@@ -295,6 +298,14 @@ public class Meta {
 
     public void setProxyAccountName(String proxyAccountName) {
         this.proxyAccountName = proxyAccountName;
+    }
+
+    public Policies getPolicies() {
+        return policies;
+    }
+
+    public void setPolicies(Policies policies) {
+        this.policies = policies;
     }
 
     public String getMediaProxy() {
