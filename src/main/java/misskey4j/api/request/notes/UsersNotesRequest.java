@@ -1,9 +1,9 @@
 package misskey4j.api.request.notes;
 
+import java.util.List;
+
 import misskey4j.api.model.TokenRequest;
 import misskey4j.api.request.protocol.FullPagingBuilder;
-
-import java.util.List;
 
 public class UsersNotesRequest extends TokenRequest {
 
@@ -23,6 +23,7 @@ public class UsersNotesRequest extends TokenRequest {
     private Boolean includeMyRenotes;
     private Boolean excludeNsfw;
     private Boolean withFiles;
+    private Boolean withChannelNotes;
 
     private List<String> fileType;
 
@@ -67,6 +68,10 @@ public class UsersNotesRequest extends TokenRequest {
         return withFiles;
     }
 
+    public Boolean getWithChannelNotes() {
+        return withChannelNotes;
+    }
+
     public List<String> getFileType() {
         return fileType;
     }
@@ -84,6 +89,7 @@ public class UsersNotesRequest extends TokenRequest {
         private Boolean includeMyRenotes;
         private Boolean excludeNsfw;
         private Boolean withFiles;
+        private Boolean withChannelNotes;
         private List<String> fileType;
 
         private UsersNotesRequestBuilder() {
@@ -139,6 +145,11 @@ public class UsersNotesRequest extends TokenRequest {
             return this;
         }
 
+        public UsersNotesRequestBuilder withChannelNotes(Boolean withChannelNotes) {
+            this.withChannelNotes = withChannelNotes;
+            return this;
+        }
+
         public UsersNotesRequestBuilder fileType(List<String> fileType) {
             this.fileType = fileType;
             return this;
@@ -157,6 +168,7 @@ public class UsersNotesRequest extends TokenRequest {
             usersNotesRequest.untilId = this.untilId;
             usersNotesRequest.includeReplies = this.includeReplies;
             usersNotesRequest.withFiles = this.withFiles;
+            usersNotesRequest.withChannelNotes = this.withChannelNotes;
             return usersNotesRequest;
         }
     }
